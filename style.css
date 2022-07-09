@@ -1,0 +1,234 @@
+
+  /* @font-face - specifies a custom font with which to display text;
+     the font can be loaded from either a remote server or a locally-installed font on the user's own computer */
+  @font-face {
+    font-family: "Roboto-Regular";
+    src: url("./fonts/Roboto-Regular.ttf");
+  }
+  /* The '*' means "all elements" (a universal selector), so we are setting all elements */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+/* -- custom properties - allow avoiding much of the repetition involved with traditional CSS */
+:root {
+    --light-1: #f9faf8;
+    --light-2: #e5e7eb;
+    --light-blue: #3882f6;
+    --dark: #1f2937;
+  }
+  html {
+    font-size: 60%;
+  }
+  body {
+    /* 1rem equals the font size of the html element,
+        which for most browsers has a default value of 16px. */
+    font-size: 1.6rem;
+    font-family: "Roboto-Regular";
+    display: grid;
+    /* 1fr takes that 10px into account automatically and subtracts 
+        it from the total width available for each column. */
+    grid-template-rows: [main-start] 1fr [main-end footer-start] 6rem [footer-end];
+    grid-row-gap: 4rem;
+  }
+  main {
+    display: grid;
+    grid-row: main-start / main-end;
+    /* vw - Relative to 1% of the width of the viewport -  the browser window size.
+        If the viewport is 50cm wide, 1vw = 0.5cm. */
+    grid-template-columns: 1fr 80vw 1fr;
+    grid-row-gap: 3rem;
+    grid-template-rows:
+      [header-start] minmax(30vh, 1fr)
+      [header-end information-start] 1fr [information-end quote-start] minmax(8rem,1fr)
+      [quote-end cta-start] 10rem [cta-end];
+  }
+  button {
+    /* default cursor - an arrow */
+    cursor: default;
+  }
+  .header {
+    grid-row: header-start / header-end;
+    grid-column: 1 / -1;
+    background-color: var(--dark);
+    padding: 2rem 15rem;
+    display: flex;
+    flex-direction: column;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-size: 2.4rem;
+    color: var(--light-1);
+  }
+  .links {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width: 50rem;
+  }
+  .links li:hover {
+    cursor: pointer;
+    color: var(--light-1);
+  }
+  .links,
+  .header-text p {
+    font-weight: 1.8rem;
+    color: var(--light-2);
+  }
+  .content {
+    display: flex;
+    margin-top: 4%;
+    margin-bottom: 6%;
+  }
+  .header-text {
+    width: 45rem;
+  }
+  .header-text > h2 {
+    font-size: 4.8rem;
+    font-weight: bolder;
+    color: var(--light-1);
+  }
+  .button {
+    background-color: var(--light-blue);
+    border-radius: 0.8rem;
+    border: none;
+    color: var(--light-1);
+    font-weight: bold;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    width: 9rem;
+  }
+  .image {
+    height: 100%;
+    width: 100%;
+    background: url(./images/logo1.jpg) top center no-repeat;
+    margin-left: 6rem;
+    color: var(--light-2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .bestsellers {
+    grid-row: information-start / information-end;
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .bestsellers > h2 {
+    font-size: 3.6rem;
+    font-weight: bolder;
+    color: var(--dark);
+    margin-bottom: 2rem;
+  }
+  .content {
+    display: flex;
+  }
+  .bestsellers-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 14rem;
+    margin-right: 2rem;
+  }
+  .image1 {
+    background: url(./images/1.jpg);
+    background-repeat: no-repeat;
+    width: 13rem;
+    height: 13rem;
+    border: 3px solid var(--light-blue);
+    border-radius: 1rem;
+    margin-bottom: 0.8rem;
+  }
+  .image2 {
+    background: url(./images/2.jpg);
+    background-repeat: no-repeat;
+    width: 13rem;
+    height: 13rem;
+    border: 3px solid var(--light-blue);
+    border-radius: 1rem;
+    margin-bottom: 0.8rem;
+  }
+  .image3 {
+    background: url(./images/3.jpg);
+    background-repeat: no-repeat;
+    width: 13rem;
+    height: 13rem;
+    border: 3px solid var(--light-blue);
+    border-radius: 1rem;
+    margin-bottom: 0.8rem;
+  }
+  .image4 {
+    background: url(./images/4.jpg);
+    background-repeat: no-repeat;
+    width: 13rem;
+    height: 13rem;
+    border: 3px solid var(--light-blue);
+    border-radius: 1rem;
+    margin-bottom: 0.8rem;
+  }
+  .bestsellers-content p {
+    text-align: center;
+  }
+  .quote {
+    grid-row: quote-start / quote-end;
+    grid-column: 1 / -1;
+    background-color: var(--light-2);
+    padding: 0 47rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .quote-text {
+    font-weight: 3.6rem;
+    font-weight: lighter;
+    font-style: italic;
+    color: var(--dark);
+    letter-spacing: 0.1rem;
+    line-height: 1.2;
+  }
+  .quote-author {
+    align-self: flex-end;
+  }
+  .quote-author::before {
+    content: "- ";
+  }
+  .discount {
+    grid-row: cta-start / cta-end;
+    grid-column: 2 / 3;
+    background-color: var(--light-blue);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .discount-text h4 {
+    color: var(--light-1);
+  }
+  .discount-text p {
+    color: var(--light-2);
+  }
+  .discount-button {
+    background-color: transparent;
+    border-radius: 0.8rem;
+    border: 2px solid var(--light-1);
+    color: var(--light-1);
+    font-weight: bold;
+    padding: 0.6rem;
+    width: 10rem;
+  }
+  footer {
+    grid-row: footer-start / footer-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark);
+    color: var(--light-1);
+  }
+
