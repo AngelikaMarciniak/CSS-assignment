@@ -19,7 +19,6 @@ Git
 Images:
 Privates
 
-Template from course:
 ![example](https://user-images.githubusercontent.com/104442170/178116048-db4cc62b-f67f-48da-967b-453a13c2a501.png)
 
 
