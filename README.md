@@ -19,7 +19,7 @@ Git
 # Images:
 Privates
 
-# Template witch I had to create:
+# Template which I had to create:
 ![example](https://user-images.githubusercontent.com/104442170/178116048-db4cc62b-f67f-48da-967b-453a13c2a501.png)
 
 
