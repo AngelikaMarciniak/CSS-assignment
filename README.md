@@ -4,22 +4,22 @@ I choose online shop for my sister business as my subject.
 
 Link: https://angelikamarciniak.github.io/CSSassignment/
 
-# Languages:
+# Languages
 HTML 5
 CSS 3
 
-# Libraries:
+# Libraries
 Google Fonts
 
-# Tools Used:
+# Tools Used
 Visual Studio Code
 GitHub
 Git
 
-# Images:
+# Images
 Privates
 
 # Template which I had to create:
-![example](https://user-images.githubusercontent.com/104442170/178116048-db4cc62b-f67f-48da-967b-453a13c2a501.png)
 
 
+![example](https://user-images.githubusercontent.com/104442170/181035257-ee00c012-75ad-4de1-93fc-1a21a477f0b6.png)
